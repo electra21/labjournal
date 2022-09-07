@@ -5,15 +5,17 @@ bibliography: references.bib
 
  
 ---
+```{r, eval=F, echo=FALSE}
+install.packages("rgl")
 
-```{r, install remotely, globalsettings, echo=FALSE, warning=FALSE, results='hide'}
+```
+
+
+```{r, install remotely, globalsettings, echo=FALSE, warning=FALSE, results='hide', eval=FALSE}
 # install.packages("remotes")
 #remotes::install_github("rlesur/klippy")
 ``` 
-{r}
-2+2
-install.packages("remotes")
-remotes::install_github("rlesur/klippy")
+
 
 ```{r, globalsettings, echo=FALSE, warning=FALSE, results='hide'}
 library(knitr)
