@@ -1,3 +1,4 @@
+do not forget to alsoc change your _site.yml file to make syre we exlcue same stuff
 # History files
 .Rhistory
 .Rapp.history

@@ -1,6 +1,6 @@
 ---
 title: "Lab journal"
-author: "by: Your Name"
+author: "by: electra"
 bibliography: references.bib
 
  
@@ -10,6 +10,10 @@ bibliography: references.bib
 # install.packages("remotes")
 #remotes::install_github("rlesur/klippy")
 ``` 
+{r}
+2+2
+install.packages("remotes")
+remotes::install_github("rlesur/klippy")
 
 ```{r, globalsettings, echo=FALSE, warning=FALSE, results='hide'}
 library(knitr)
