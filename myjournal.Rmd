@@ -1,6 +1,6 @@
 ---
 title: "Journal 1"
-#bibliography: Collins, R., & Steffen-Fluhr, N. (2019). Hidden patterns: Using social network analysis to track career trajectories of women STEM faculty. Equality, Diversity and Inclusion: An International Journal.bib
+#bibliography: reference.bib
 author: "Electra"
 #research q:
 "Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"

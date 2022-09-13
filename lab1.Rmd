@@ -3,11 +3,7 @@ title: "Females’ science faculty researchers Social Network and the presence o
 #bibliography: references.bib
 
 author: "Electra"
-research question:"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"
-
-
-
-
+#rsearch question:"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"
 ---
 
 
