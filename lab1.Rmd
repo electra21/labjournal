@@ -1,7 +1,13 @@
 ---
-title: "Journal 1"
+title: "Females’ science faculty researchers Social Network and the presence of the male gender in it"
 #bibliography: references.bib
-author: "Your Name"
+
+author: "Electra"
+research question:"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"
+
+
+
+
 ---
 
 
