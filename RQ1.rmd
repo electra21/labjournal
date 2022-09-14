@@ -1,5 +1,5 @@
 ---
-title: "Lab journal-introduction"
+title: "Research question 1"
 author: "by: electra"
 bibliography: references.bib
 ---  
@@ -8,12 +8,10 @@ bibliography: references.bib
 install.packages("rgl")
 ```
 
-
 ```{r, install remotely, globalsettings, echo=FALSE, warning=FALSE, results='hide', eval=FALSE}
 # install.packages("remotes")
 #remotes::install_github("rlesur/klippy")
 ``` 
-
 
 ```{r, globalsettings, echo=FALSE, warning=FALSE, results='hide'}
 library(knitr)
@@ -32,66 +30,23 @@ klippy::klippy(position = c('top', 'right'))
 #klippy::klippy(tooltip_message = 'Click to copy', tooltip_success = 'Done')
 ```
 
-
-
-
-----
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-# My Lab Journal
-Last compiled on `r format(Sys.time(), '%B, %Y')`  
-
-*Describe lab journal here.*
-<br>
-
 ----  
 
-# Header level 1
-
-## Header level 2
-
-### Header level 3
-
-##  Everyone can fork this repository. Use this example to journal your lab work and assignments. 
-
-We, Jochem Tolsma and Bas Hofstra, use this repository for our Social Network Analysis For Social Scientists course [@SNASS]. 
-
-
-:::
-::: {.column width="50%"}
-
-
-
-
-![](images/cover.jpg)
-
-
-:::
-::::::::::::::
-
-
-## How to use
-
-1. Fork the repository for this website and follow instructions on `README` to get started [here](https://github.com/JochemTolsma/labjournal).  
-
-2. Journal your work, by editing the .Rmd-files
-
-3. ...
-
-4. Change everything to make it your own!
-
+Last compiled on `r format(Sys.time(), '%B, %Y')`
 
 <br>
 
-Use the top menu to navigate through the journal.
-
+----
+  
+This is just an example page of your `r colorize("lab journal", "red")`.
+You can journal the assignments of the first day here.
+  
 
 ----
 
-# References
+# research question
 
+*"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"*
 
 
 

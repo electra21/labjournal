@@ -1,0 +1,49 @@
+```{r}
+#install.packages("igraph")
+require(igraph)
+g <- make_graph("Zachary")
+plot(g)
+```
+```{r}
+gmat <- as_adjacency_matrix(g, type = "both", sparse = FALSE)
+gmat
+ncol (gmat)
+
+```
+```{r}
+# number of nodes
+vcount(g)
+# number of edges
+ecount(g)
+
+
+```
+```{r}
+degree(g)
+hist(table(degree(g)), xlab='indegree', main= 'Histogram of indegree')
+```
+
+```{r}
+dyad.census(g)
+```
+
+```{r}
+#install.packages("sna")
+require (sna)
+igraph::triad.census(g)
+# I will use sna because it shows the names of the triads as well.
+sna::triad.census(gmat)
+```
+```{r}
+
+# changing V
+g
+plot(g, mode = "undirected")
+V(g)$size <- igraph::degree(g)*8
+plot(g)
+
+
+
+```
+
+

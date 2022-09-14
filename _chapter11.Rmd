@@ -1,0 +1,76 @@
+```{r}
+# load the necessary datasets
+load("data book/soc_df.RData")
+load("data book/soc_collabs1.RData")
+load("data book/soc_collabs2.RData")
+```
+
+```{r}
+# get unique collaborators of soc staff first
+soc_collabs_unique <- unique(soc_collabs[, 4])  # so 229 unique collaborators for RU staff?
+soc_collabs_unique <- c(soc_collabs_unique, soc_df$gs_id)  # add the soc staff themselves.
+soc_collabs_unique <- data.frame(soc_collabs_unique)
+soc_collabs_unique$v1 <- 1  # convenient to select on after the merge
+soc_collabs_unique <- unique(soc_collabs_unique)
+
+# so this is a very important step, we join the unique soc collaborators to the collaborators of
+# collaborators
+require(tidyverse)
+onefivedegree <- left_join(collabs_1deep, soc_collabs_unique, by = c(coauth_id = "soc_collabs_unique"))
+
+# Then, we drop those that are not among sociology collaborators and who don't lsit coauthors
+# regardless
+onefivedegree <- onefivedegree[!is.na(onefivedegree$v1), ]
+onefivedegree <- onefivedegree[!is.na(onefivedegree$coauth), ]
+
+# we pick those columns and have an edgelist of soc collaborators and whether they collaborate with
+# those same collaborators the 1.5 degree network
+onefivedegree <- onefivedegree[, c("name", "coauth")]
+names(onefivedegree) <- c("from", "to")
+
+# we get soc collaborators and add those to the data above and end up with a nice edgelist!
+socc <- soc_collabs[!is.na(soc_collabs$coauth), ]
+socc <- socc[, c("name", "coauth")]
+names(socc) <- c("from", "to")
+onefivedegree <- rbind(socc, onefivedegree)
+```
+
+
+```{r}
+save(onefivedegree, file = "data book/soc_onefivedegree.RData")
+```
+```{r}
+onefivedegree <- as.matrix(onefivedegree)  # matrix because igraph wants that
+library(igraph)  # Notice that we call igraph here, in anticipation of the viz tutorial.
+net1 <- graph_from_edgelist(onefivedegree, directed = TRUE)  # Notice the igraph function here!
+
+plot(net1)  # pretty ugly!
+```
+
+```{r}
+plot(net1 ,
+     vertex.color = "gold", # nice color for the vertices
+     vertex.size = 4,  # we'll vertices a bit smaller
+     vertex.frame.color = "green",  # we'll put a gray frame around vertices
+     vertex.label.color = "red",  # not that ugly blue color for the labels (names)
+     vertex.label.family = "Helvetica", # not a fan of times new roman in figures
+     vertex.label.cex = 0.4,  # make the label a bit smaller too
+     vertex.label.dist = 0.5,  # we'll pull the labels a bit away from the vertices
+     edge.curved = 0.2, # curved edges is always a nice touch
+     edge.arrow.size = 0.1) # make arrow size (direction of edge) smaller
+```
+```{r}
+plot(net1,
+     vertex.color = in_network$vcol, 
+     #NOTICE THESE CONDITIONAL STATEMENTS BELOW
+     vertex.label = ifelse(!is.na(in_network$total_cites), in_network$name, NA),
+     vertex.size = 4,  # we'll make them a bit smaller
+     vertex.frame.color = "gray",  # we'll put a frame around it
+     vertex.label.color = "black",  # not that ugly blue color for the names
+     vertex.label.family = "Helvetica", # not a fan of times in figures
+     vertex.label.cex = 0.65,  # a bit smaller too
+     vertex.label.dist = 0.5,  # we'll pull the labels a bit away from the vertices
+     edge.curved = 0.2, # curved edges is always a nice tough
+     edge.arrow.size = 0.1) # arrow size smaller
+```
+

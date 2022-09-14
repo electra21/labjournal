@@ -1,20 +1,52 @@
-name: "Example Lab Journal"
+name: "Hooray SNASS"
 author: 
-  - 'Your Name'
+  - 'Electra'
 output_dir: "docs"
 exclude: 
   - "data"
   - "_test"
+  - "data book"
 bibliography: references.bib
 navbar:
   left:
     - icon: fa-home
       href: index.html
-    - text: "My journal"
+    - text: "My labjournal"
       menu:
+      - text: "Week 1"
+        href: week1.html
       - text: "Page 1"
         href: lab1.html
-      
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+    - text: "Research question"
+      menu:
+      - text: "RQ_v1"
+        href: RQ1.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+    - text: "Final report"
+      menu:
+      - text: "intro"
+        href: intro.html
+      - text: "theory"
+        href: theory.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html
+      - text: "Page 1"
+        href: lab1.html      
         
         # here, other .Rmds can be added
 

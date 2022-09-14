@@ -1,7 +1,0 @@
-```{r}
-install.packages("igraph")
-require(igraph)
-g <- make_graph("Zachary")
-plot(g)
-```
-

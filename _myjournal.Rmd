@@ -1,0 +1,68 @@
+---
+title: "Journal 1"
+#bibliography: reference.bib
+author: "Electra"
+#research q:
+"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"
+"There is a gender gap in STEM studies due to traditional gender roles, stereotypes and gender inequality. As a result fewer women decide to follow these studies and it is much harder for them according to literature(Casad et all., 2021) to advance. Collins and Steffen-Fluhr(2019), suggest that men in STEM facutlies tend to work with other men. As a result is harder for women to include them in their Social Network.  In this research i focus on these women's social network. it seems that when is male dominated male tend to collaborate with men. will be something different if it's gender neutral? as a sample I will use the faculty of science of Utrecht uni and Radboud the former is gender neutral and the other male dominated. I will take at least one female worker from each uni and compare."
+---
+
+
+ 
+
+
+reference
+
+Collins, R., & Steffen-Fluhr, N. (2019). Hidden patterns: Using social network analysis to track career trajectories of women STEM faculty. Equality, Diversity and Inclusion: An International Journal.
+
+Casad, B. J., Franks, J. E., Garasky, C. E., Kittleman, M. M., Roesler, A. C., Hall, D. Y., & Petzel, Z. W. (2021). Gender inequality in academia: Problems and solutions for women faculty in STEM. Journal of neuroscience research, 99(1), 13-23.
+
+
+https://www.ru.nl/science/about-the-faculty/organisation/faculty-board/
+https://www.uu.nl/en/organisation/faculty-of-science/about-us/management
+
+
+```{r}
+"?references.bib"
+```
+```
+
+```{r, globalsettings, echo=FALSE, warning=FALSE, results='hide'}
+library(knitr)
+
+knitr::opts_chunk$set(echo = TRUE)
+opts_chunk$set(tidy.opts=list(width.cutoff=100),tidy=TRUE, warning = FALSE, message = FALSE,comment = "#>", cache=TRUE, class.source=c("test"), class.output=c("test2"))
+options(width = 100)
+rgl::setupKnitr()
+
+
+
+colorize <- function(x, color) {sprintf("<span style='color: %s;'>%s</span>", color, x) }
+
+```
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(position = c('top', 'right'))
+#klippy::klippy(color = 'darkred')
+#klippy::klippy(tooltip_message = 'Click to copy', tooltip_success = 'Done')
+```
+
+Last compiled on `r format(Sys.time(), '%B, %Y')`
+
+<br>
+
+----
+  
+This is just an example page of your `r colorize("lab journal", "red")`.
+You can journal the assignments of the first day here.
+  
+
+----
+
+
+```{r}
+print("Hello Lab Journal")
+```
+
+
+
