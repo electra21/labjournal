@@ -47,17 +47,37 @@ net1 <- graph_from_edgelist(onefivedegree, directed = TRUE)  # Notice the igraph
 plot(net1)  # pretty ugly!
 ```
 
-```{r}
+```{r}  
 plot(net1 ,
      vertex.color = "gold", # nice color for the vertices
      vertex.size = 4,  # we'll vertices a bit smaller
-     vertex.frame.color = "green",  # we'll put a gray frame around vertices
-     vertex.label.color = "red",  # not that ugly blue color for the labels (names)
+     vertex.frame.color = "gray",  # we'll put a gray frame around vertices
+     vertex.label.color = "black",  # not that ugly blue color for the labels (names)
      vertex.label.family = "Helvetica", # not a fan of times new roman in figures
      vertex.label.cex = 0.4,  # make the label a bit smaller too
      vertex.label.dist = 0.5,  # we'll pull the labels a bit away from the vertices
      edge.curved = 0.2, # curved edges is always a nice touch
      edge.arrow.size = 0.1) # make arrow size (direction of edge) smaller
+```  
+```{r}
+in_network <- data.frame(as_ids(V(net1)))
+names(in_network)[1] <- "name"
+
+#soc_df$total_cites <- soc_df$total_cites.x
+ru_nodes <- soc_df[, c("name", "total_cites")]
+in_network <- left_join(in_network, ru_nodes, by = c("name" = "name"))
+in_network$vcol <- ifelse(is.na(in_network$total_cites), "#E69F00", "#56B4E9")
+
+plot(net1,
+     vertex.color = in_network$vcol, #THIS WAS WHAT WE DID THE LAST CODEBLOCK FOR!
+     vertex.size = 4,  # we'll make them a bit smaller
+     vertex.frame.color = "gray",  # we'll put a frame around it
+     vertex.label.color = "black",  # not that ugly blue color for the names
+     vertex.label.family = "Helvetica", # not a fan of times in figures
+     vertex.label.cex = 0.4,  # a bit smaller too
+     vertex.label.dist = 0.5,  # we'll pull the labels a bit away from the vertices
+     edge.curved = 0.2,  # curved edges is always a nice tough
+     edge.arrow.size = 0.1) # arrow size smaller
 ```
 ```{r}
 plot(net1,
@@ -73,4 +93,19 @@ plot(net1,
      edge.curved = 0.2, # curved edges is always a nice tough
      edge.arrow.size = 0.1) # arrow size smaller
 ```
+```{r}
+plot(net1,
+     vertex.color = in_network$vcol, 
+     vertex.label = ifelse(!is.na(in_network$total_cites), in_network$name, NA),
+     # SAME HERE, TRY TO SMOOTH THE TOTAL_CITES A BIT WITH LOGSCALE
+     vertex.size = ifelse(!is.na(in_network$total_cites), log(in_network$total_cites), 2),
+     vertex.frame.color = "gray",  # we'll put a frame around it
+     vertex.label.color = "black",  # not that ugly blue color for the names
+     vertex.label.family = "Helvetica", # not a fan of times in figures
+     vertex.label.cex = 0.65,  # a bit smaller too
+     vertex.label.dist = 0.5,  # we'll pull the labels a bit away from the vertices
+     edge.curved = 0.2, # curved edges is always a nice tough
+     edge.arrow.size = 0.1) # arrow size smaller
+```
+
 
