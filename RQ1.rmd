@@ -1,15 +1,15 @@
 ---
 title: "Research question 1"
-author: "by: electra"
+author: "by: Electra"
 bibliography: references.bib
 ---  
 
 ```{r, eval=F, echo=FALSE}
-install.packages("rgl")
+#install.packages("rgl")
 ```
 
 ```{r, install remotely, globalsettings, echo=FALSE, warning=FALSE, results='hide', eval=FALSE}
-# install.packages("remotes")
+#install.packages("remotes")
 #remotes::install_github("rlesur/klippy")
 ``` 
 
@@ -46,7 +46,11 @@ You can journal the assignments of the first day here.
 
 # research question
 
-*"Does female researchers’ social network, in the Science department, include more male academics when the faculty board is gender balanced rather than male-dominated?"*
+*"To what extend the gender composition of Faculty of Science's board can influence the gender inequality within the facutly?"*  
+
+"Science studies are considered by society as suitable only for males. Female researcher's according to the literature are very few and it seems that men tend to collaborate with fellow male researches excluding women from their Social network. Thus, is much harder for women to create a powerful social connections that may lead to career advancement. This research focuses on how the gender composition of the board can have an impact on gender inequality within and between the departments. To examine that this research examines the collaboration within the departments and with Faculty's board. Additionally, concentrates to the power dynamics. Does gender play any role in who the researches select to work with?"
+----
+
 
 
 
